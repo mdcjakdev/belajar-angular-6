@@ -1,0 +1,39 @@
+<form>
+  <div>
+    Uder ID
+    <input type="number"
+           [ngModelOptions]="{standalone: true}"
+           [(ngModel)]="userId" />
+  </div>
+  <div>
+    ID
+    <input type="number"
+           [ngModelOptions]="{standalone: true}"
+           [(ngModel)]="id" />
+  </div>
+  <div>
+    TITLE
+    <input type="text"
+           [ngModelOptions]="{standalone: true}"
+           [(ngModel)]="title" />
+  </div>
+  <div>
+    BODY
+    <input type="text"
+           [ngModelOptions]="{standalone: true}"
+           [(ngModel)]="body" />
+  </div>
+
+  <div>
+    <button (click)="saveData()">SAVE</button>
+  </div>
+
+</form>
+
+
+<div>
+  <button (click)="getData()">GET DATA</button>
+  <div *ngFor="let d of data;">
+    {{d.title}} <br>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+
+<!--Interpolatioan-->
+{{title}} <br>
+<!--&#45;&#45;-->
+
+<!--property binding-->
+<input type="text" [disabled]="isDisable" [(ngModel)]="nama" />
+<!--&#45;&#45;-->
+
+<br>
+
+<!--Class binding-->
+<label [class.text-warning]="true"> Testing Angular </label>
+<br>
+<label [ngClass]="['bolding-font', 'text-warning']"> Testing Angular </label>
+<br>
+<label [class]="'bolding-font text-warning'"> Testing Angular </label>
+<!-- -&#45;&#45;-->
+
+<br>
+<!--Style Binding-->
+<label [style.color]="'yellow'"> Style Binding </label>
+
+<br>
+<!--event binding-->
+<button (click)="onClickThisButton()">Disable/ Enable</button>
+
+<br>
+<!--Two Way Binding-->
+Cetak Nama {{nama}}
+
+
+<br>
+
+
+<!--if els-->
+<div *ngIf="(nama === 'ALBERT'); else bukanNamaSaya"> Maaf</div>
+<ng-template  #bukanNamaSaya>
+  silahkan masukan nama anda
+</ng-template>
+
+<br><br>
+SWITCH CASE <br>
+<!--switch-->
+<div [ngSwitch]="nama">
+  <div *ngSwitchCase="'ALBERT'">ALBERT</div>
+  <div *ngSwitchCase="'HERI'">HERI</div>
+  <div *ngSwitchCase="'ASKO'">ASKO</div>
+  <div *ngSwitchDefault="">tidak ada nama</div>
+
+
+</div>
+
+
+<br>
+LOOPING
+<br>
+<br>
+<div *ngFor="let n of daftarSiswa; index as i">
+  {{i+1}}.{{n.nama}}
+</div>
+
+
+<a href="/httprequest">Http request</a>
+
+<app-httprequest></app-httprequest>
+
+
+
+
+
